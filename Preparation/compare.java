@@ -1,6 +1,6 @@
-/*Print the expression that checks if the amount of credits you have earned, 
-creditsEarned, is greater than the number of credits you need to graduate, 
-creditsToGraduate.*/
+//Print the expression that checks if the amount of credits you have earned, 
+//creditsEarned, is greater than the number of credits you need to graduate, 
+//creditsToGraduate.
  
 public class compare {
 	public static void main(String[] args) {   
