@@ -1,36 +1,62 @@
-class Apple {
+import java.util.Scanner;
 
-    void show() {
-        System.out.println("This is an apple.");
+// Base class
+class Plate {
+    double length, width;
+
+    Plate(double length, double width) {
+        this.length = length;
+        this.width = width;
+        System.out.println("Plate dimensions:");
+        System.out.println("Length: " + this.length);
+        System.out.println("Width: " + this.width);
     }
 }
 
-class Banana extends Apple {
+// Derived class from Plate
+class Box extends Plate {
+    double height;
 
-    @Override
-    void show() {
-        System.out.println("This is a banana.");
+    Box(double length, double width, double height) {
+        super(length, width); // Call the base class constructor
+        this.height = height;
+        System.out.println("\nBox dimensions:");
+        System.out.println("Length: " + this.length);
+        System.out.println("Width: " + this.width);
+        System.out.println("Height: " + this.height);
     }
 }
 
-class Cherry extends Apple {
+// Derived class from Box
+class WoodBox extends Box {
+    double thickness;
 
-    @Override
-    void show() {
-        System.out.println("This is a cherry.");
+    WoodBox(double length, double width, double height, double thickness) {
+        super(length, width, height); // Call the base class constructor
+        this.thickness = thickness;
+        System.out.println("\nWood Box dimensions:");
+        System.out.println("Length: " + this.length);
+        System.out.println("Width: " + this.width);
+        System.out.println("Height: " + this.height);
+        System.out.println("Thickness: " + this.thickness);
     }
 }
 
-// Main class
 public class Main2 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Apple fruit;
+        System.out.print("Enter the length: ");
+        double length = scanner.nextDouble();
+        System.out.print("Enter the width: ");
+        double width = scanner.nextDouble();
+        System.out.print("Enter the height: ");
+        double height = scanner.nextDouble();
+        System.out.print("Enter the thickness: ");
+        double thickness = scanner.nextDouble();
 
-        fruit = new Banana();
-        fruit.show();
+        WoodBox woodBox = new WoodBox(length, width, height, thickness);
 
-        fruit = new Cherry();
-        fruit.show();
+        scanner.close();
     }
 }
