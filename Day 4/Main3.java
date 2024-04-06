@@ -22,7 +22,7 @@ class Cherry extends Apple {
 }
 
 // Main class
-public class Main2 {
+public class Main3 {
     public static void main(String[] args) {
 
         Apple fruit;
